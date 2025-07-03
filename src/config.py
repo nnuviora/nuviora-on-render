@@ -22,6 +22,11 @@ class ConfigSettings(BaseSettings):
 
     DB_URI: Optional[str] = Field(default=None)
 
+    class Config:
+        env_file = ".env"
+
+    
+
     @model_validator(mode="after")
     def generate_db_uri(self):
         if not self.DB_URI:
@@ -61,7 +66,8 @@ class ConfigSettings(BaseSettings):
     GOOGLE_TOKEN_URL: str
     GOOGLE_USERINFO_URL: str
 
-    model_config = SettingsConfigDict(env_file="../.env", env_file_encoding="utf-8")
+    #model_config = SettingsConfigDict(env_file="../.env", env_file_encoding="utf-8")
 
 
 config_setting = ConfigSettings()
+print(f"DB_URI: {config_setting.DB_URI}")
