@@ -13,7 +13,7 @@ from fastapi import UploadFile, File
 from services.load_service import LoadService
 
 
-router = APIRouter(prefix="/profile", tags=["User Profile33"])
+router = APIRouter(prefix="/profile", tags=["User Profile"])
 
 
 user_service_dep = Annotated[UserService, Depends(user_dep)]
@@ -30,7 +30,6 @@ user_base_schema_dep = Annotated[UserBaseSchema, Depends(get_current_user)]
 )
 async def profile(user: user_base_schema_dep) -> UserBaseSchema:
     return user
-
 
 
 @router.delete(
