@@ -18,6 +18,7 @@ def get_application() -> FastAPI:
     origins = [
         "https://nuviora.vercel.app",
         "https://nuviora-frontend-git-dev-nnuvioras-projects.vercel.app",
+        "https://nuviora-beckend.onrender.com/",
         "http://localhost:3000",
     ]
 
