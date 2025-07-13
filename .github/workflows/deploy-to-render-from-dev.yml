@@ -15,6 +15,6 @@ jobs:
 
       - name: Deploy to Render
         env:
-          DEPLOY_HOOK_URL: ${{ secrets.YELLOW_APPLE_SECRET }}
+          YELLOW_APPLE_SECRET: ${{ secrets.YELLOW_APPLE_SECRET }}
         run: |
           curl "$YELLOW_APPLE_SECRET"
