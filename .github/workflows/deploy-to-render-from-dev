@@ -1,0 +1,20 @@
+name: Deploy FastAPI to Render (form dev branch)
+
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  deploy-to-render:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Deploy to Render
+        env:
+          DEPLOY_HOOK_URL: ${{ secrets.ROTTEN_PEAR_DEPLOY }}
+        run: |
+          curl "$ROTTEN_PEAR_DEPLOY"
