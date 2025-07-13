@@ -13,7 +13,7 @@ from fastapi import UploadFile, File
 from services.load_service import LoadService
 
 
-router = APIRouter(prefix="/profile", tags=["User Profile - hook test"])
+router = APIRouter(prefix="/profile", tags=["User Profile - hook test111"])
 
 
 user_service_dep = Annotated[UserService, Depends(user_dep)]
